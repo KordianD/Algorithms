@@ -1,0 +1,44 @@
+#include <iostream>
+#include <cmath>
+
+double f(double x);
+double fp(double x);
+double secondDerivative(double x);
+double NewtonMethod(double a, double b, const double ACCURACY);
+
+int main() {
+    std::cout << NewtonMethod(0, 5, 0.000001) << std::endl;
+}
+
+double NewtonMethod(double a, double b, const double ACCURACY) {
+    double x0, x1;
+
+    if (f(b) * secondDerivative(b) > 0) {
+        x0 = b;
+        x1 = a;
+    } else {
+        x0 = a;
+        x1 = b;
+    }
+
+    int i = 30;
+    while (i && (fabs(x1 - x0) > ACCURACY) && (fabs(x0) > ACCURACY)) {
+        x0 = x0 - f(x0) / fp(x0);
+        if (fabs(f(x0)) < ACCURACY) {
+            return x0;
+        }
+        i--;
+    }
+}
+
+double f(double x) {
+    return x * x * x + 3 * x - 5;
+}
+
+double fp(double x) {
+    return 3 * x * x + 3;
+}
+
+double secondDerivative(double x) {
+    return 6 * x;
+}
