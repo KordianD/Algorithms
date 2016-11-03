@@ -11,9 +11,9 @@ int main() {
 double bisection(double a, double b, const double ACCURACY) {
     double z = (a + b) / 2;
 
-    if (f(z) < ACCURACY)
+    if (fabs(f(z)) < ACCURACY)
         return z;
-    while (f(z) > ACCURACY) {
+    while (fabs(f(z)) > ACCURACY) {
         if (f(a) * f(z) < 0)
             b = z;
         else
