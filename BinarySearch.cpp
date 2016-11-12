@@ -1,44 +1,25 @@
-#include <cmath>
-#include <cstdio>
-#include <vector>
 #include <iostream>
-#include <algorithm>
-#include<iostream>
 
-long BinarySearch(long * array, long number, long arrayLength);
+int BinarySearch(int *array, int number, int arrayLength);
 
 int main() {
-    long amountOfNumbers;
-    long searchesNumbers;
 
-    std::cin >> amountOfNumbers >> searchesNumbers;
+    int amountOfNumbers = 10;
+    int array[amountOfNumbers] = {0, 1, 2, 13, 13, 16, 17, 19, 32, 42};
 
-    long * array = new long[amountOfNumbers];
-    long * searchesArray = new long[searchesNumbers];
-
-    for (long i = 0; i < amountOfNumbers; i++)
-        std::cin >> array[i];
-
-    for (long i = 0; i < searchesNumbers; i++)
-        std::cin >> searchesArray[i];
-
-    for (long i = 0; i < searchesNumbers; i++)
-        std::cout << BinarySearch(array, searchesArray[i], amountOfNumbers) << " ";
-
-
+    std::cout << BinarySearch(array, 13, amountOfNumbers);
 }
 
-long BinarySearch(long * array, long number, long arrayLength) {
-    long first = 0;
-    long last = arrayLength - 1;
+int BinarySearch(int *array, int number, int arrayLength) {
+    int first = 0;
+    int last = arrayLength - 1;
 
     while (first <= last) {
-        long mid = (long)(first + last)/2;
+        int mid = (int) (first + last) / 2;
         if (array[mid] == number) {
             while (array[--mid] == number);
-                return mid + 2;
-        }
-        else {
+            return mid + 2;
+        } else {
             if (number < array[mid])
                 last = mid - 1;
             else
