@@ -1,0 +1,76 @@
+---
+title: "Drozd Kordian - sprawozdanie "
+output: pdf_document
+---
+
+# Wczytaj plik dane do kursu.csv. 
+```{r}
+library(readr)
+dane_do_kursu <- read_csv("C:/Users/Kordian Drozd/Downloads/danew.csv", col_names = FALSE)
+```
+
+
+# Stwórz dwa wektory, zawieraj¹ce odpowiednie kolumny z pliku csv
+```{r}
+w1 = dane_do_kursu$X1
+w2 = dane_do_kursu$X20
+```
+
+# Œrednia
+```{r}
+mean(w1)
+mean(w2)
+```
+
+#Mediana
+```{r}
+median(w1)
+median(w2)
+```
+
+#Wariancja
+```{r}
+var(w1)
+var(w2)
+```
+
+#Odchylenie standardowe
+```{r}
+sd(w1)
+sd(w2)
+```
+
+#Kwartyle
+```{r}
+quantile(w1,c(0.25, 0.5, 0.75))
+quantile(w2,c(0.25, 0.5, 0.75))
+```
+
+#Wartosc minimalna
+```{r}
+min(w1)
+min(w2)
+```
+
+#Wartosc maksymalna
+```{r}
+max(w1)
+max(w2)
+```
+
+#Box-plot
+```{r}
+boxplot(w1, range=1.5, main="Box-plot w1")
+boxplot(w2, range=1.5, main="Box-plot w2")
+```
+
+#Korelacja
+```{r}
+cor(w1,w2)
+```
+
+#Wykres punktowy
+```{r}
+library(car)
+scatterplot(w1, w2, smoother=NULL, reg.line=lm, boxplots=FALSE, main="Scatterplot")
+```
