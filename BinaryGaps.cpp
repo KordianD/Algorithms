@@ -1,3 +1,5 @@
+// Code was writen for Codility
+
 #include <iostream>
 
 std::string binaryDecomposition(int N);
