@@ -1,3 +1,3 @@
 # Algorithms
 
-Some of the algorithms from diffent task and websites.
+Some of the algorithms from different task and websites.
