@@ -12,8 +12,12 @@ void checkParentheses(const string& parentheses){
         }
         else
         {
+            if (stack.empty())
+            {
+                std::cout << "NO" << std::endl;
+                return;
+            }
             auto& front_elem = stack.front();
-            stack.pop_front();
             
             if (('}' == elem and '{' != front_elem) or 
                 (']' == elem and '[' != front_elem) or 
@@ -21,9 +25,15 @@ void checkParentheses(const string& parentheses){
                 std::cout << "NO" << std::endl;
                 return;
             }
+            
+            stack.pop_front();
         }
     }
-    
+    if (not stack.empty()){
+        std::cout << "NO" << std::endl;
+        return;
+    }
+        
     std::cout << "YES" << std::endl;
 }
 
