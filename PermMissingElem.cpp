@@ -4,7 +4,8 @@
 
 #include <vector>
 
-int solution(std::vector<int> &A) {
+int solution(std::vector<int> &A)
+{
     long sum = 0;
 
     for (int i = 0; i < A.size() + 1; i++)

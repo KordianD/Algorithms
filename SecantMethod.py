@@ -1,7 +1,9 @@
 from __future__ import division
 
+
 def function(x):
     return x ** 3 + 2 * x ** 2 + 1
+
 
 def secant(f, a, b, epx, epy):
     if abs(a - b) < epx:
@@ -18,5 +20,6 @@ def secant(f, a, b, epx, epy):
         return 0
     else:
         return x
+
 
 print secant(function, -6.0, 6.0, 0.0000001, 0.000001)

@@ -2,7 +2,7 @@ def BinarySearch(array, number):
     first = 0
     last = len(array) - 1
     while first <= last:
-        mid = (first + last)//2
+        mid = (first + last) // 2
         if array[mid] == number:
             return mid + 1
         else:
@@ -15,4 +15,4 @@ def BinarySearch(array, number):
 
 array = [0, 1, 2, 8, 13, 17, 19, 32, 42]
 
-print(BinarySearch(array, 7))            
+print(BinarySearch(array, 7))

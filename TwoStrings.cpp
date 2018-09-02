@@ -4,14 +4,15 @@
 using namespace std;
 
 // Complete the twoStrings function below.
-string twoStrings(string s1, string s2) {
+string twoStrings(string s1, string s2)
+{
     std::unordered_map<char, int> map;
-    
+
     for (auto elem : s1)
     {
         ++map[elem];
     }
-    
+
     for (auto elem : s2)
     {
         if (map.find(elem) != map.end())
@@ -30,7 +31,8 @@ int main()
     cin >> q;
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-    for (int q_itr = 0; q_itr < q; q_itr++) {
+    for (int q_itr = 0; q_itr < q; q_itr++)
+    {
         string s1;
         getline(cin, s1);
 

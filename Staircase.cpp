@@ -5,15 +5,16 @@ using namespace std;
 /*
  * Complete the staircase function below.
  */
-void staircase(int n) {
-    for(int i = 0; i < n; ++i)
+void staircase(int n)
+{
+    for (int i = 0; i < n; ++i)
     {
-        for (int j = 0; j < n-i-1; ++j)
+        for (int j = 0; j < n - i - 1; ++j)
             std::cout << " ";
-            
-        for (int k = n-i-1; k < n; ++k)
+
+        for (int k = n - i - 1; k < n; ++k)
             std::cout << "#";
-        
+
         std::cout << std::endl;
     }
 

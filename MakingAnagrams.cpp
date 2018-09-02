@@ -3,33 +3,34 @@
 using namespace std;
 
 // Complete the makeAnagram function below.
-int makeAnagram(string a, string b) {
+int makeAnagram(string a, string b)
+{
     std::unordered_map<char, int> firstWord;
-    
-    for (const auto& letter : a)
+
+    for (const auto &letter : a)
     {
         auto it = firstWord.find(letter);
         if (firstWord.end() == it)
         {
             firstWord[letter] = 1;
-        }
-        else
+        } else
         {
             (*it).second++;
         }
     }
-    
+
     auto counter = 0;
-    
-    for (const auto& letter : b)
+
+    for (const auto &letter : b)
     {
         auto it = firstWord.find(letter);
-        if (firstWord.end() != it and (*it).second > 0){
+        if (firstWord.end() != it and (*it).second > 0)
+        {
             counter += 2;
             (*it).second--;
         }
     }
-    
+
     return a.size() + b.size() - counter;
 }
 

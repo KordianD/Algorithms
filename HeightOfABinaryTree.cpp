@@ -2,36 +2,44 @@
 
 using namespace std;
 
-class Node {
-    public:
-        int data;
-        Node *left;
-        Node *right;
-        Node(int d) {
-            data = d;
-            left = NULL;
-            right = NULL;
-        }
+class Node
+{
+public:
+    int data;
+    Node *left;
+    Node *right;
+    Node(int d)
+    {
+        data = d;
+        left = NULL;
+        right = NULL;
+    }
 };
 
-class Solution {
-    public:
-  		Node* insert(Node* root, int data) {
-            if(root == NULL) {
-                return new Node(data);
-            } else {
-                Node* cur;
-                if(data <= root->data) {
-                    cur = insert(root->left, data);
-                    root->left = cur;
-                } else {
-                    cur = insert(root->right, data);
-                    root->right = cur;
-                }
+class Solution
+{
+public:
+    Node *insert(Node *root, int data)
+    {
+        if (root == NULL)
+        {
+            return new Node(data);
+        } else
+        {
+            Node *cur;
+            if (data <= root->data)
+            {
+                cur = insert(root->left, data);
+                root->left = cur;
+            } else
+            {
+                cur = insert(root->right, data);
+                root->right = cur;
+            }
 
-               return root;
-           }
+            return root;
         }
+    }
 
 /*The tree node has data, left child and right child
 class Node {
@@ -41,36 +49,39 @@ class Node {
 };
 
 */
-    int height(Node* root) {
-     if (root == nullptr)
-     {
-        return 0;
-     }
+    int height(Node *root)
+    {
+        if (root == nullptr)
+        {
+            return 0;
+        }
 
-     if (root->left == nullptr and root->right == nullptr)
-     {
-         return 0;
-     }
+        if (root->left == nullptr and root->right == nullptr)
+        {
+            return 0;
+        }
 
 
-     return height(root->left) + 1 >  height(root->right) + 1 ? height(root->left) + 1: height(root->right) + 1;
+        return height(root->left) + 1 > height(root->right) + 1 ? height(root->left) + 1 : height(root->right) + 1;
 
 
     }
 
 }; //End of Solution
 
-int main() {
+int main()
+{
 
     Solution myTree;
-    Node* root = NULL;
+    Node *root = NULL;
 
     int t;
     int data;
 
     std::cin >> t;
 
-    while(t-- > 0) {
+    while (t-- > 0)
+    {
         std::cin >> data;
         root = myTree.insert(root, data);
     }

@@ -3,9 +3,10 @@
 using namespace std;
 
 // Complete the solve function below.
-vector<int> solve(vector<string> strings, vector<string> queries) {
+vector<int> solve(vector <string> strings, vector <string> queries)
+{
     vector<int> howMany{};
-    for(const auto& item : queries)
+    for (const auto &item : queries)
     {
         howMany.emplace_back(count(strings.begin(), strings.end(), item));
     }
@@ -21,9 +22,10 @@ int main()
     cin >> strings_count;
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-    vector<string> strings(strings_count);
+    vector <string> strings(strings_count);
 
-    for (int i = 0; i < strings_count; i++) {
+    for (int i = 0; i < strings_count; i++)
+    {
         string strings_item;
         getline(cin, strings_item);
 
@@ -34,9 +36,10 @@ int main()
     cin >> queries_count;
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-    vector<string> queries(queries_count);
+    vector <string> queries(queries_count);
 
-    for (int i = 0; i < queries_count; i++) {
+    for (int i = 0; i < queries_count; i++)
+    {
         string queries_item;
         getline(cin, queries_item);
 
@@ -45,10 +48,12 @@ int main()
 
     vector<int> res = solve(strings, queries);
 
-    for (int i = 0; i < res.size(); i++) {
+    for (int i = 0; i < res.size(); i++)
+    {
         fout << res[i];
 
-        if (i != res.size() - 1) {
+        if (i != res.size() - 1)
+        {
             fout << "\n";
         }
     }
